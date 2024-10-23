@@ -5,11 +5,11 @@
   "homepage": "https://martinl77.github.io/multiconsolehub",
   "scripts": {
     "dev": "next dev",
-    "build": "next build  && next export",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d out"
+    "deploy": "yarn build && gh-pages -d out"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.34",
