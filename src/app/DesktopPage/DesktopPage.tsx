@@ -5,11 +5,11 @@ import WindowsTaskBar from "@/components/WindowsTaskBar/WindowsTaskBar";
 const DesktopPage: React.FC = () => {
     return (
         <>
-            {/* <HomePageWrapper> */}
+            <HomePageWrapper>
             <HomePageStylingTests>DesktopPage</HomePageStylingTests>
             <StyledBackgroundImage src="/multiconsolehub/images/windows_background_1920x1080.jpg" />
             <WindowsTaskBar />
-            {/* </HomePageWrapper> */}
+            </HomePageWrapper>
         </>
     );
 }
