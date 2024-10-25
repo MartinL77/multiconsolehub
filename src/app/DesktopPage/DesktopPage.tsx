@@ -1,15 +1,14 @@
 import React from "react";
-import { HomePageStylingTests, HomePageWrapper, StyledBackgroundImage } from "./DesktopPage.styled";
+import { DesktopWrapper, StyledBackgroundImage } from "./DesktopPage.styled";
 import WindowsTaskBar from "@/components/WindowsTaskBar/WindowsTaskBar";
 
 const DesktopPage: React.FC = () => {
     return (
         <>
-            <HomePageWrapper>
-            <HomePageStylingTests>DesktopPage</HomePageStylingTests>
+            <DesktopWrapper>
             <StyledBackgroundImage src="/multiconsolehub/images/windows_background_1920x1080.jpg" />
             <WindowsTaskBar />
-            </HomePageWrapper>
+            </DesktopWrapper>
         </>
     );
 }
