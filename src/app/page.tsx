@@ -1,12 +1,12 @@
 'use client';
 
 import React from "react";
-import HomePage from "./HomePage/HomePage";
+import DesktopPage from './DesktopPage/DesktopPage'
 
 export default function Home() {
   return (
     <>
-    <HomePage />
+    <DesktopPage></DesktopPage>
     </>
   );
 }
