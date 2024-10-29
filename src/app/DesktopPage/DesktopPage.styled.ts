@@ -10,6 +10,7 @@ export const DesktopWrapper = styled.div`
 export const StyledBackgroundImage = styled.img`
     height: 95%;
     width: 100%;
+    pointer-events: none;
 
     /* @media only screen and (min-width: 320px) {
 

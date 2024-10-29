@@ -2,8 +2,12 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { ImageContainer, StartTaskBarButton, TaskBarContainer, TaskBarMainSection, TimeTaskBar } from "./WindowsTaskBar.styled";
 
-const WindowsTaskBar: React.FC = () => {
-    
+interface windowsTaskBarProps {
+    onToggleMenu: () => void;
+    buttonRef: React.RefObject<HTMLButtonElement>;
+}
+
+const WindowsTaskBar: React.FC<windowsTaskBarProps> = ({onToggleMenu, buttonRef}) => {
     const [currentTime, setCurrentTime] = useState(() =>
         new Intl.DateTimeFormat('en-US', {
             hour: 'numeric',
@@ -27,7 +31,10 @@ const WindowsTaskBar: React.FC = () => {
     return (
         <>
             <TaskBarContainer>
-                <StartTaskBarButton>
+                <StartTaskBarButton ref={buttonRef} onClick={(e) => {
+                    e.stopPropagation();
+                    onToggleMenu();
+                }}>
                     <Image src="/multiconsolehub/images/windows icons/windows_xp_icon.png" alt="" height={30} width={30} style={{marginLeft: '7px', marginRight: '7px'}}></Image>
                     Start
                 </StartTaskBarButton>
