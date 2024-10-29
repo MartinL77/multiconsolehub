@@ -1,17 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { StartTaskBarButton, TaskBarContainer, TaskBarMainSection, TimeTaskBar } from "./WindowsTaskBar.styled";
+import { ImageContainer, StartTaskBarButton, TaskBarContainer, TaskBarMainSection, TimeTaskBar } from "./WindowsTaskBar.styled";
 
 const WindowsTaskBar: React.FC = () => {
+    
+    const [currentTime, setCurrentTime] = useState(() =>
+        new Intl.DateTimeFormat('en-US', {
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        }).format(new Date())
+      );
+    
+      useEffect(() => {
+        const timer = setInterval(() => {
+          setCurrentTime(new Intl.DateTimeFormat('en-US', {
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        }).format(new Date()));
+        }, 1000);
+    
+        return () => clearInterval(timer);
+      }, []);
+
     return (
         <>
             <TaskBarContainer>
                 <StartTaskBarButton>
-                    <Image src="/multiconsolehub/images/windows_xp_icon.png" alt="" height={30} width={30} style={{marginLeft: '7px', marginRight: '7px'}}></Image>
+                    <Image src="/multiconsolehub/images/windows icons/windows_xp_icon.png" alt="" height={30} width={30} style={{marginLeft: '7px', marginRight: '7px'}}></Image>
                     Start
                 </StartTaskBarButton>
                 <TaskBarMainSection />
-                <TimeTaskBar />
+                <TimeTaskBar>
+                    <ImageContainer>
+                        <Image src="/multiconsolehub/images/windows icons/Security - Ok.png" alt="" height={25} width={25} style={{marginRight: '7px'}}></Image>
+                        <Image src="/multiconsolehub/images/windows icons/Network and Internet.png" alt="" height={25} width={25} style={{marginRight: '7px'}}></Image>
+                        <Image src="/multiconsolehub/images/windows icons/volume.png" alt="" height={25} width={25} style={{marginRight: '7px'}}></Image>
+                    </ImageContainer>
+                    <span>{currentTime}</span>
+                </TimeTaskBar>
             </TaskBarContainer>
         </>
     );

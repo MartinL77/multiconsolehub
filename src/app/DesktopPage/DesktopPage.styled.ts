@@ -1,7 +1,14 @@
 import styled from "styled-components";
 
-export const StyledBackgroundImage = styled.img`
+export const DesktopWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     height: 100%;
+`
+
+export const StyledBackgroundImage = styled.img`
+    height: 95%;
     width: 100%;
 
     /* @media only screen and (min-width: 320px) {
@@ -15,11 +22,4 @@ export const StyledBackgroundImage = styled.img`
     @media only screen and (min-width: 1200px) {
 
     } */
-`
-
-export const DesktopWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
 `

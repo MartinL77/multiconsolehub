@@ -6,7 +6,7 @@ import DesktopPage from './DesktopPage/DesktopPage'
 export default function Home() {
   return (
     <>
-    <DesktopPage></DesktopPage>
+      <DesktopPage />
     </>
   );
 }
