@@ -3,19 +3,11 @@ import styled from "styled-components";
 export const TaskBarContainer = styled.div`
     background-color: #225ad1;
     display: flex;
+    height: 7%;
+
+@media only screen and (min-width: 768px) {
     height: 5%;
-
-    /* @media only screen and (min-width: 320px) {
-
-    }
-
-    @media only screen and (min-width: 768px) {
-
-    }
-
-    @media only screen and (min-width: 1200px) {
-
-    } */
+}
 `
 
 export const StartTaskBarButton = styled.button`
@@ -46,18 +38,44 @@ export const TimeTaskBar = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
+
+    @media only screen and (min-width: 520px) {
+        padding: 0;
+    }
 
     span {
+        display: flex;
+        position: absolute;
         text-transform: uppercase;
         color: white;
         font-family: Tahoma;
-        width: 80px;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 40px;
+        font-weight: bold;
+
+        @media only screen and (min-width: 520px) {
+            position: relative;
+            display: flex; 
+            width: 80px;
+            top: 0;
+            left: 0;
+            transform: none;
+            font-size: 16px;
+            font-weight: normal;
+        }
     }
 `
 
 export const ImageContainer = styled.div`
-    display: flex;
+    display: none;
     padding: 0 15px 0 10px;
+
+    @media only screen and (min-width: 520px) {
+        display: flex; 
+    }
 `
 
 export const TaskBarMainSection = styled.div`
@@ -65,4 +83,19 @@ export const TaskBarMainSection = styled.div`
     border-right: solid #374e79 1px;
     border-top: solid #3582ea 2px;
     width: 100%;
+`
+
+export const MobileArrowButton = styled.button`
+    display: flex;
+    background-color: #0593f3;
+    border-radius: 50%;
+    border: solid #1b3c78 2px;
+    width: 20px;
+    height: 20px;
+    justify-content: center;
+    color: white;
+
+    @media only screen and (min-width: 520px) {
+        display: none; 
+    }
 `

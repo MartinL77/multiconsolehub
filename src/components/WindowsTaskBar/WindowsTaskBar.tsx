@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { ImageContainer, StartTaskBarButton, TaskBarContainer, TaskBarMainSection, TimeTaskBar } from "./WindowsTaskBar.styled";
+import { ImageContainer, MobileArrowButton, StartTaskBarButton, TaskBarContainer, TaskBarMainSection, TimeTaskBar } from "./WindowsTaskBar.styled";
 
 interface windowsTaskBarProps {
     onToggleMenu: () => void;
@@ -43,8 +43,11 @@ const WindowsTaskBar: React.FC<windowsTaskBarProps> = ({onToggleMenu, buttonRef}
                     <ImageContainer>
                         <Image src="/multiconsolehub/images/windows icons/Security - Ok.png" alt="" height={25} width={25} style={{marginRight: '7px'}}></Image>
                         <Image src="/multiconsolehub/images/windows icons/Network and Internet.png" alt="" height={25} width={25} style={{marginRight: '7px'}}></Image>
-                        <Image src="/multiconsolehub/images/windows icons/volume.png" alt="" height={25} width={25} style={{marginRight: '7px'}}></Image>
+                        <Image src="/multiconsolehub/images/windows icons/Volume.png" alt="" height={25} width={25} style={{marginRight: '7px'}}></Image>
                     </ImageContainer>
+                    <MobileArrowButton>
+                    ↑
+                    </MobileArrowButton>
                     <span>{currentTime}</span>
                 </TimeTaskBar>
             </TaskBarContainer>

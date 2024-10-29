@@ -8,19 +8,35 @@ export const DesktopWrapper = styled.div`
 `
 
 export const StyledBackgroundImage = styled.img`
-    height: 95%;
+    height: 93%;
     width: 100%;
     pointer-events: none;
 
-    /* @media only screen and (min-width: 320px) {
-
-    }
-
     @media only screen and (min-width: 768px) {
-
+        height: 95%;
     }
-
-    @media only screen and (min-width: 1200px) {
-
-    } */
 `
+
+// @media only screen and (min-width: 320px) {
+
+// }
+
+// @media only screen and (min-width: 520px) {
+
+// }
+
+// @media only screen and (min-width: 768px) {
+    
+// }
+
+// @media only screen and (min-width: 1024px) {
+
+// }
+
+// @media only screen and (min-width: 1280px) {
+
+// }
+
+// @media only screen and (min-width: 1760px) {
+
+// }
