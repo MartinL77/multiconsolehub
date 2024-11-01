@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import { ImageContainer, MobileArrowButton, StartTaskBarButton, TaskBarContainer, TaskBarMainSection, TimeTaskBar } from "./WindowsTaskBar.styled";
+import { ImageContainer, MobileArrowButton, MobileImageArrowContainer, StartTaskBarButton, TaskBarContainer, TaskBarMainSection, TimeTaskBar } from "./WindowsTaskBar.styled";
 
 interface windowsTaskBarProps {
     onToggleMenu: () => void;
@@ -8,25 +8,26 @@ interface windowsTaskBarProps {
 }
 
 const WindowsTaskBar: React.FC<windowsTaskBarProps> = ({onToggleMenu, buttonRef}) => {
+    const [isArrowMenuOpen, setIsArrowMenuOpen] = useState(false);
     const [currentTime, setCurrentTime] = useState(() =>
         new Intl.DateTimeFormat('en-US', {
             hour: 'numeric',
             minute: '2-digit',
             hour12: true
         }).format(new Date())
-      );
-    
-      useEffect(() => {
+    );
+
+    useEffect(() => {
         const timer = setInterval(() => {
-          setCurrentTime(new Intl.DateTimeFormat('en-US', {
+            setCurrentTime(new Intl.DateTimeFormat('en-US', {
             hour: 'numeric',
             minute: '2-digit',
             hour12: true
-        }).format(new Date()));
+            }).format(new Date()));
         }, 1000);
-    
+
         return () => clearInterval(timer);
-      }, []);
+    }, []);
 
     return (
         <>
@@ -45,9 +46,14 @@ const WindowsTaskBar: React.FC<windowsTaskBarProps> = ({onToggleMenu, buttonRef}
                         <Image src="/multiconsolehub/images/windows icons/Network and Internet.png" alt="" height={25} width={25} style={{marginRight: '7px'}}></Image>
                         <Image src="/multiconsolehub/images/windows icons/Volume.png" alt="" height={25} width={25} style={{marginRight: '7px'}}></Image>
                     </ImageContainer>
-                    <MobileArrowButton>
-                    ↑
+                    <MobileArrowButton onClick={() => setIsArrowMenuOpen(!isArrowMenuOpen)}>
+                        <Image src="/multiconsolehub/images/windows icons/arrow_left_icon.png" alt="" height={18} width={18}></Image>
                     </MobileArrowButton>
+                    {isArrowMenuOpen && <MobileImageArrowContainer>
+                        <Image src="/multiconsolehub/images/windows icons/Security - Ok.png" alt="" height={25} width={25} style={{marginRight: '7px'}}></Image>
+                        <Image src="/multiconsolehub/images/windows icons/Network and Internet.png" alt="" height={25} width={25} style={{marginRight: '7px'}}></Image>
+                        <Image src="/multiconsolehub/images/windows icons/Volume.png" alt="" height={25} width={25} style={{marginRight: '7px'}}></Image>
+                        </MobileImageArrowContainer>}
                     <span>{currentTime}</span>
                 </TimeTaskBar>
             </TaskBarContainer>
