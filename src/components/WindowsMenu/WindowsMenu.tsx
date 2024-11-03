@@ -1,14 +1,21 @@
 import React, { forwardRef } from "react";
-import { WindowsMenuContainer } from "./WindowsMenu.styled";
+import { LeftMenuContentContainer, MenuButtonContainer, MenuContentContainer, ProgramsButton, RightMenuContentContainer, UserProfilePicture, WindowsMenuContainer } from "./WindowsMenu.styled";
 
-const WindowsMenu = forwardRef<HTMLDivElement>((props, ref) => {
+const WindowsMenu = forwardRef<HTMLDivElement>((_, ref) => {
     return (
         <WindowsMenuContainer ref={ref}>
-            <p>Start Menu Content</p>
+            {/* <UserProfilePicture></UserProfilePicture>
+            <MenuContentContainer>
+                <LeftMenuContentContainer>
+                    <ProgramsButton></ProgramsButton>
+                </LeftMenuContentContainer>
+                <RightMenuContentContainer>
+                </RightMenuContentContainer>
+            </MenuContentContainer>
+            <MenuButtonContainer> 
+            </MenuButtonContainer> */} 
         </WindowsMenuContainer>
     );
 });
-
-WindowsMenu.displayName = "WindowsMenu";
 
 export default WindowsMenu;
