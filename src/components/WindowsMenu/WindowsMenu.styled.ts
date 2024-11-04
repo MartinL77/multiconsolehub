@@ -5,7 +5,7 @@ export const WindowsMenuContainer = styled.div`
     border: solid 1px #0b4a9e;
     position: absolute;
     width: 50%;
-    min-height: 60%;
+    height: 65%;
     bottom: 7%;
     
     @media only screen and (min-width: 768px) {
@@ -14,11 +14,33 @@ export const WindowsMenuContainer = styled.div`
     }
 `
 
-export const UserProfilePicture = styled.div`
+export const UserInfoContainer = styled.div`
+    display: flex;
+    width: 100%;
+    height: 12%;
+    padding: 5px;
 
+    span {
+        margin: 10px 0 0 5px;
+        color: white;
+        font-family: Tahoma;
+        font-size: 14px;
+        font-weight: bold;
+    }
 `
 
 export const MenuContentContainer = styled.div`
+    background-color: white;
+    height: 60%;
+
+
+    @media only screen and (min-height: 768px) {
+        height: 70%;
+    }
+
+    @media only screen and (min-height: 1024px) {
+        height: 73%;
+    } 
 
 `
 
@@ -35,5 +57,44 @@ export const RightMenuContentContainer = styled.div`
 `
 
 export const MenuButtonContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 0 10px;
+`
 
+export const LogOffContainer = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    span {
+        color: white;
+        font-family: Tahoma;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+`
+
+export const TurnOffContainer = styled.div`
+    display: flex;
+    align-items: center;
+
+    span {
+        color: white;
+        font-family: Tahoma;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+`
+
+export const LogOffButton = styled.button`
+    height: 30px;
+    width: 30px;
+    background-color: yellow;
+`
+
+export const TurnOffButton = styled.button`
+    height: 30px;
+    width: 30px;
+    background-color: red;
 `
